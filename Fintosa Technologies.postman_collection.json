@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "afc452dc-408c-463a-b54d-2dc7d05eb12e",
+		"name": "Fintosa Technologies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36418154"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"if(jsonData){\r",
+									"    pm.collectionVariables.set(\"token\", jsonData.token);  \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"kanani.raj.1999@gmail.com\",\r\n    \"password\": \"admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/users/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-LvHDSr+8Lylffdz7eQcKvCEqCGc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 14:13:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NWQ4ZTg1YzIwYTE4MWU2NTZjMDUzNCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzM0MTg1NjA2LCJleHAiOjE3MzQyMDM2MDZ9._ScgBkYj5LaJM1lKWu_WQU1Eev2rgFhVgs3MaaE3vEY\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/?page=1&limit=10&genre=Fantasy&author=J.K. Rowling&title=and&sort=publishedDate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "genre",
+									"value": "Fantasy"
+								},
+								{
+									"key": "author",
+									"value": "J.K. Rowling"
+								},
+								{
+									"key": "title",
+									"value": "and"
+								},
+								{
+									"key": "sort",
+									"value": "publishedDate"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/books/?page=1&limit=10&genre=Fantasy&author=J.K. Rowling&title=and&sort=publishedDate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "genre",
+											"value": "Fantasy"
+										},
+										{
+											"key": "author",
+											"value": "J.K. Rowling"
+										},
+										{
+											"key": "title",
+											"value": "and"
+										},
+										{
+											"key": "sort",
+											"value": "publishedDate"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-Dd1NNDQVhPOn6wOOT9hUpFdA+tI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 15:31:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 1,\n    \"page\": \"1\",\n    \"books\": [\n        {\n            \"_id\": \"675da452c20a181e656c0553\",\n            \"title\": \"Harry Potter and the Sorcerer's Stone\",\n            \"author\": \"J.K. Rowling\",\n            \"price\": 12.99,\n            \"publishedDate\": \"1997-01-01T00:00:00.000Z\",\n            \"genre\": \"Fantasy, Children's Literature\",\n            \"isActive\": true\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/books/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "675da389c20a181e656c053f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/books/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/books/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "675da389c20a181e656c053f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-CZ0JRxrP96z/JYu0bZuObjollUU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 15:32:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"675da389c20a181e656c053f\",\n    \"title\": \"The Lord of the Rings\",\n    \"author\": \"J.R.R. Tolkien\",\n    \"price\": 19.99,\n    \"genre\": \"High Fantasy\",\n    \"isActive\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "/books",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"The Hitchhiker's Guide to the Galaxy\",\r\n  \"author\": \"Douglas Adams\",\r\n  \"genre\": \"Science Fiction, Humor\",\r\n  \"publishedDate\": \"1979-01-01\",\r\n  \"price\": 14.99\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/books",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"The Hitchhiker's Guide to the Galaxy\",\r\n  \"author\": \"Douglas Adams\",\r\n  \"genre\": \"Science Fiction, Humor\",\r\n  \"publishedDate\": \"1979-01-01\",\r\n  \"price\": 14.99\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/books",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-7qyxkIsWmU7KaI5ObNp6ZymO6uw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 15:35:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"The Hitchhiker's Guide to the Galaxy\",\n    \"author\": \"Douglas Adams\",\n    \"genre\": \"Science Fiction, Humor\",\n    \"publishedDate\": \"1979-01-01T00:00:00.000Z\",\n    \"price\": 14.99,\n    \"isActive\": true,\n    \"_id\": \"675da5ca46923e912dcf0ce8\",\n    \"createdAt\": \"2024-12-14T15:35:38.019Z\",\n    \"updatedAt\": \"2024-12-14T15:35:38.019Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "/books/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 20.99\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "675da5ca46923e912dcf0ce8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/books/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"price\": 20.99\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/books/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "675da5ca46923e912dcf0ce8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-TJQv4SF3iC4xqAG072akrTeIuNs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 15:38:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"675da5ca46923e912dcf0ce8\",\n    \"title\": \"The Hitchhiker's Guide to the Galaxy\",\n    \"author\": \"Douglas Adams\",\n    \"genre\": \"Science Fiction, Humor\",\n    \"publishedDate\": \"1970-01-01T00:00:01.997Z\",\n    \"price\": 20.99,\n    \"isActive\": true,\n    \"createdAt\": \"2024-12-14T15:35:38.019Z\",\n    \"updatedAt\": \"2024-12-14T15:38:53.865Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "/books/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/books/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "675da5ca46923e912dcf0ce8"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/books/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/books/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"books",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "675da5ca46923e912dcf0ce8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-kJ+WRogmF+NiCTSLVb75GPQGAAY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 14 Dec 2024 15:41:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Book marked as inactive successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
