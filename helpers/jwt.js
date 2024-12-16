@@ -1,6 +1,4 @@
 const jwtoken = require("jsonwebtoken");
-
-// import helpers
 const error = require('./error');
 
 

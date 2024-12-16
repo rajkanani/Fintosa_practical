@@ -40,3 +40,7 @@ A RESTful API built using the MEAN stack for managing books with authentication 
     ```bash
     npm start
     ```
+-   For developement:
+    ```bash
+    npm run dev
+    ```

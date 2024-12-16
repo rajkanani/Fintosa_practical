@@ -1,5 +1,4 @@
 const { validationResult } = require("express-validator");
-// import helpers
 const error = require('./error');
 
 
